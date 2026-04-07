@@ -666,14 +666,20 @@ main {
   line-height: 1.6;
 }
 
-/**
- * skills - tag/chip layout
- */
-
+/* ===== SKILLS TITLE ===== */
 .skills-title {
-  margin-bottom: 20px;
+  margin: 0;
 }
 
+/* ===== HEADER ===== */
+.skills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* ===== CHIP STYLE ===== */
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -686,20 +692,93 @@ main {
   background: var(--border-gradient-onyx);
   color: var(--orange-yellow-crayola);
   font-size: var(--fs-7);
-  font-weight: var(--fw-400);
   padding: 6px 14px;
   border-radius: 50px;
   border: 1px solid var(--jet);
-  transition: var(--transition-1);
-  cursor: default;
+  transition: 0.3s;
 }
 
 .skill-tag:hover {
   background: var(--bg-gradient-yellow-2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px hsla(45, 100%, 72%, 0.15);
 }
 
+/* ===== TOGGLE ===== */
+.toggle-switch {
+  position: relative;
+  width: 45px;
+  height: 22px;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background: var(--jet);
+  border-radius: 50px;
+  inset: 0;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background: var(--orange-yellow-crayola);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: var(--bg-gradient-yellow-1);
+}
+
+input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+/* ===== PROGRESS BAR ===== */
+.skills-list {
+  padding: 20px;
+  display: none; /* hidden by default */
+}
+
+.skills-item {
+  margin-bottom: 15px;
+}
+
+.skill .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.skill .title-wrapper data {
+  color: var(--orange-yellow-crayola);
+  font-weight: 500;
+ 
+  font-size: var(--fs-7);
+}
+
+.skill-progress-bg {
+  background: var(--jet);
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  background: var(--text-gradient-yellow);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
@@ -1163,7 +1242,8 @@ textarea.form-input::-webkit-resizer {
 }
 
 /*-----------------------------------*\
-  #CODING PROFILES
+  #
+   PROFILES
 \*-----------------------------------*/
 
 .coding-profiles-grid {
@@ -1825,7 +1905,7 @@ textarea.form-input::-webkit-resizer {
   gap: 15px;
 }
 
-/* Download button */
+/* Resume Download Button */
 .resume-download-btn {
   position: relative;
   display: flex;
@@ -1837,7 +1917,7 @@ textarea.form-input::-webkit-resizer {
   background: var(--border-gradient-onyx);
   border-radius: 10px;
   box-shadow: var(--shadow-2);
-  transition: var(--transition-1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background var(--transition-1);
 }
 
 .resume-download-btn::before {
@@ -1852,6 +1932,8 @@ textarea.form-input::-webkit-resizer {
 .resume-download-btn:hover,
 .resume-download-btn:focus {
   background: var(--bg-gradient-yellow-1);
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 8px 20px hsla(45, 100%, 72%, 0.25);
 }
 
 .resume-download-btn:hover::before,
@@ -1861,19 +1943,6 @@ textarea.form-input::-webkit-resizer {
 
 .resume-download-btn ion-icon {
   font-size: 16px;
-}
-
-/* --- CUSTOM UI POLISH OVERRIDES --- */
-
-/* Enhance Resume Download Button */
-.resume-download-btn {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.resume-download-btn:hover,
-.resume-download-btn:focus {
-  transform: scale(1.03) translateY(-2px);
-  box-shadow: 0 8px 20px hsla(45, 100%, 72%, 0.25);
 }
 
 /* Fix Project Grid Images Aspect Ratio */

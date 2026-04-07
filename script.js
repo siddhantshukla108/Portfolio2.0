@@ -36,10 +36,12 @@ for (let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
+  const normalized = selectedValue.toLowerCase().trim();
   for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
+    const itemCategory = (filterItems[i].dataset.category || "").toLowerCase().trim();
+    if (normalized === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (normalized === itemCategory) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
@@ -87,7 +89,8 @@ if (form && formBtn) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     formBtn.setAttribute("disabled", "");
-    formBtn.querySelector("span").innerText = "Sending...";
+    const btnSpan = formBtn.querySelector("span");
+    if (btnSpan) btnSpan.innerText = "Sending...";
     
     const formData = new FormData(form);
     
@@ -124,7 +127,7 @@ if (form && formBtn) {
     })
     .finally(() => {
       formBtn.removeAttribute("disabled");
-      formBtn.querySelector("span").innerText = "Send Message";
+      if (btnSpan) btnSpan.innerText = "Send Message";
       setTimeout(() => { if (msgElement) msgElement.style.display = "none"; }, 5000);
     });
   });
@@ -190,7 +193,7 @@ const codingProfiles = [
   },
   {
     name: "CodeChef",
-    url: "https://www.codechef.com/users/sidshuk108",
+    url: "https://www.codechef.com/users/siddhantshu108",
     icon: "trophy-outline",
     desc: "Competitive programming contests"
   },
@@ -202,19 +205,19 @@ const codingProfiles = [
   },
   {
     name: "HackerRank",
-    url: "https://www.hackerrank.com/profile/siddhantshukla108",
+    url: "https://www.hackerrank.com/profile/shuklasiddhant31",
     icon: "terminal-outline",
     desc: "Skill certifications & challenges"
   },
   {
     name: "GeeksforGeeks",
-    url: "https://www.geeksforgeeks.org/user/siddhantshukla108/",
+    url: "https://www.geeksforgeeks.org/user/siddhantshukla108",
     icon: "school-outline",
     desc: "DSA tutorials & practice problems"
   },
   {
     name: "Coding Ninjas",
-    url: "https://www.naukri.com/code360/profile/siddhantshukla108",
+    url: "https://www.naukri.com/code360/profile/deVyne",
     icon: "rocket-outline",
     desc: "Guided learning paths & problems"
   }
@@ -236,3 +239,19 @@ if (profilesContainer) {
     profilesContainer.innerHTML += profileHTML;
   });
 }
+
+// Skills section toggle functionality..
+
+const toggle = document.getElementById("skillsToggle");
+const chip = document.getElementById("chipSkills");
+const bar = document.getElementById("barSkills");
+
+toggle.addEventListener("change", () => {
+  if (toggle.checked) {
+    chip.style.display = "none";
+    bar.style.display = "block";
+  } else {
+    chip.style.display = "flex";
+    bar.style.display = "none";
+  }
+});
