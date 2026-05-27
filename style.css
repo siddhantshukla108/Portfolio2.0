@@ -445,6 +445,15 @@ main {
   font-size: var(--fs-7);
 }
 
+.contact-info .contact-link {
+  transition: color var(--transition-1);
+}
+
+.contact-info .contact-link:hover,
+.contact-info .contact-link:focus {
+  color: var(--orange-yellow-crayola);
+}
+
 .contact-info address {
   font-style: normal;
 }
@@ -674,8 +683,81 @@ main {
  * skills - tag/chip layout
  */
 
-.skills-title {
+.skills-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
   margin-bottom: 20px;
+}
+
+.skills-title {
+  margin-bottom: 0;
+}
+
+.skills-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-label {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-400);
+  user-select: none;
+}
+
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--onyx);
+  border: 1px solid var(--jet);
+  transition: var(--transition-1);
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  background-color: var(--orange-yellow-crayola);
+  transition: var(--transition-1);
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background: var(--text-gradient-yellow);
+  border-color: var(--orange-yellow-crayola);
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+  background-color: var(--smoky-black);
 }
 
 .skill-tags {
@@ -702,6 +784,50 @@ main {
   background: var(--bg-gradient-yellow-2);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px hsla(45, 100%, 72%, 0.15);
+}
+
+/* Skills progress list styling */
+.skills-list {
+  padding: 24px;
+}
+
+.skills-item:not(:last-child) {
+  margin-bottom: 22px;
+}
+
+.skills-item .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.skills-item .title-wrapper h5 {
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  color: var(--white-2);
+}
+
+.skills-item .title-wrapper data {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+}
+
+.skill-progress-bg {
+  background: var(--jet);
+  height: 8px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  background: var(--text-gradient-yellow);
+  height: 100%;
+  border-radius: inherit;
+  width: 0;
+  transition: width 0.8s ease-out;
 }
 
 /*-----------------------------------*\
@@ -1628,10 +1754,10 @@ textarea.form-input::-webkit-resizer {
   }
 
   .main-content {
-  position: relative;
-  width: 100%;
-  margin: auto;
-}
+    position: relative;
+    width: 950px;
+    margin: auto;
+  }
 
   /**
    * NAVBAR
@@ -1955,4 +2081,9 @@ textarea.form-input::-webkit-resizer {
 .project-item:hover img {
   transform: scale(1.08);
   filter: brightness(0.8);
+}
+
+/* Utility class to hide empty buttons */
+.hidden {
+  display: none !important;
 }

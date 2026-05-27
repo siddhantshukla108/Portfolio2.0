@@ -29,6 +29,18 @@ for (let i = 0; i < selectItems.length; i++) {
     if (selectValue) selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
+
+    // Sync with desktop filter buttons
+    for (let j = 0; j < filterBtn.length; j++) {
+      if (filterBtn[j].innerText.toLowerCase().trim() === selectedValue.trim()) {
+        if (lastClickedBtn) {
+          lastClickedBtn.classList.remove("active");
+        }
+        filterBtn[j].classList.add("active");
+        lastClickedBtn = filterBtn[j];
+        break;
+      }
+    }
   });
 }
 
@@ -126,7 +138,12 @@ if (form && formBtn) {
       }
     })
     .finally(() => {
-      formBtn.removeAttribute("disabled");
+      // Re-evaluate form validity rather than unconditionally enabling the button
+      if (form.checkValidity()) {
+        formBtn.removeAttribute("disabled");
+      } else {
+        formBtn.setAttribute("disabled", "");
+      }
       if (btnSpan) btnSpan.innerText = "Send Message";
       setTimeout(() => { if (msgElement) msgElement.style.display = "none"; }, 5000);
     });
@@ -193,7 +210,7 @@ const codingProfiles = [
   },
   {
     name: "CodeChef",
-    url: "https://www.codechef.com/users/siddhantshu108",
+    url: "https://www.codechef.com/users/sidshuk108",
     icon: "trophy-outline",
     desc: "Competitive programming contests"
   },
@@ -205,7 +222,7 @@ const codingProfiles = [
   },
   {
     name: "HackerRank",
-    url: "https://www.hackerrank.com/profile/shuklasiddhant31",
+    url: "https://www.hackerrank.com/profile/siddhantshukla108",
     icon: "terminal-outline",
     desc: "Skill certifications & challenges"
   },
@@ -217,7 +234,7 @@ const codingProfiles = [
   },
   {
     name: "Coding Ninjas",
-    url: "https://www.naukri.com/code360/profile/deVyne",
+    url: "https://www.naukri.com/code360/profile/siddhantshukla108",
     icon: "rocket-outline",
     desc: "Guided learning paths & problems"
   }
@@ -240,20 +257,45 @@ if (profilesContainer) {
   });
 }
 
-// Skills section toggle functionality..
-
+// Skills section toggle functionality with dynamic bar animation
 const toggle = document.getElementById("skillsToggle");
 const chip = document.getElementById("chipSkills");
 const bar = document.getElementById("barSkills");
 
 if (toggle && chip && bar) {
+  const progressFills = bar.querySelectorAll(".skill-progress-fill");
+  // Set initial width to 0% so they start un-filled on load
+  progressFills.forEach(fill => fill.style.width = "0%");
+
   toggle.addEventListener("change", () => {
     if (toggle.checked) {
       chip.style.display = "none";
       bar.style.display = "block";
+
+      // Trigger smooth fill-up animation when switching to Bars view
+      progressFills.forEach(fill => {
+        const targetWidth = fill.getAttribute("data-width") || "0%";
+        fill.style.width = "0%";
+        // Force reflow
+        fill.offsetHeight;
+        fill.style.width = targetWidth;
+      });
     } else {
       chip.style.display = "flex";
       bar.style.display = "none";
+      // Reset widths back to 0% so they can animate again next time
+      progressFills.forEach(fill => fill.style.width = "0%");
     }
   });
 }
+
+// Hide empty project GitHub source code buttons programmatically on page load
+document.querySelectorAll(".project-item").forEach(item => {
+  const githubLink = item.querySelector(".project-links a[title*='source code']");
+  if (githubLink) {
+    const href = githubLink.getAttribute("href");
+    if (!href || href === "#" || href.trim() === "") {
+      githubLink.classList.add("hidden");
+    }
+  }
+});

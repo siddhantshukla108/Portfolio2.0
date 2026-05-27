@@ -8,7 +8,7 @@
       name="description"
       content="Portfolio of Siddhant Shukla - MERN Stack Developer and Competitive Programmer. View my projects and skills."
     />
-    <title>Siddhant | Portfolio</title>
+    <title>Siddhant Shukla | Portfolio</title>
 
     <!-- Open Graph -->
     <meta
@@ -220,6 +220,7 @@
                 class="navbar-link active"
                 data-nav-link
                 aria-label="About section"
+                data-page="about"
               >
                 About
               </button>
@@ -229,6 +230,7 @@
                 class="navbar-link"
                 data-nav-link
                 aria-label="Resume section"
+                data-page="resume"
               >
                 Resume
               </button>
@@ -238,6 +240,7 @@
                 class="navbar-link"
                 data-nav-link
                 aria-label="Portfolio section"
+                data-page="portfolio"
               >
                 Portfolio
               </button>
@@ -257,6 +260,7 @@
                 class="navbar-link"
                 data-nav-link
                 aria-label="Contact section"
+                data-page="contact"
               >
                 Contact
               </button>
@@ -379,7 +383,7 @@
                 </h4>
                 <span>2023 — 2027</span>
                 <p class="timeline-text">
-                  Dr. A. P. J. Abdul Kalam Technical University,Lucknow, Uttar
+                  Dr. A. P. J. Abdul Kalam Technical University, Lucknow, Uttar
                   Pradesh <br />
                   SGPA: 8.1
                 </p>
@@ -389,7 +393,7 @@
                 <h4 class="h4 timeline-item-title">Class XII – CISCE Board</h4>
                 <span>2022</span>
                 <p class="timeline-text">
-                  Bishop George School and College, Prayagraj, Uttar Pradesh<br />
+                  Bishop George School and College, Prayagraj, Uttar Pradesh
                 </p>
               </li>
 
@@ -397,7 +401,7 @@
                 <h4 class="h4 timeline-item-title">Class X – CISCE Board</h4>
                 <span>2020</span>
                 <p class="timeline-text">
-                  Bishop George School and College, Prayagraj, Uttar Pradesh<br />
+                  Bishop George School and College, Prayagraj, Uttar Pradesh
                 </p>
               </li>
             </ol>
@@ -462,8 +466,19 @@
           </section>
 
           <section class="skill">
-            <h3 class="h3 skills-title">My skills</h3>
-            <div class="skill-tags content-card">
+            <div class="skills-title-wrapper">
+              <h3 class="h3 skills-title">My skills</h3>
+              <div class="skills-toggle-container">
+                <span class="toggle-label">Chips</span>
+                <label class="switch">
+                  <input type="checkbox" id="skillsToggle" aria-label="Toggle between skill chips and bars" />
+                  <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Bars</span>
+              </div>
+            </div>
+
+            <div class="skill-tags content-card" id="chipSkills">
               <span class="skill-tag">HTML</span>
               <span class="skill-tag">CSS</span>
               <span class="skill-tag">JavaScript</span>
@@ -482,6 +497,70 @@
               <span class="skill-tag">Competitive Programming</span>
               <span class="skill-tag">SQL</span>
               <span class="skill-tag">Firebase</span>
+            </div>
+
+            <div id="barSkills" class="content-card" style="display: none;">
+              <ul class="skills-list">
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">MERN Stack (React, Node, Express, MongoDB)</h5>
+                    <data value="90">90%</data>
+                  </div>
+                  <div class="skill-progress-bg">
+                    <div class="skill-progress-fill" data-width="90%"></div>
+                  </div>
+                </li>
+
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">JavaScript & TypeScript</h5>
+                    <data value="85">85%</data>
+                  </div>
+                  <div class="skill-progress-bg">
+                    <div class="skill-progress-fill" data-width="85%"></div>
+                  </div>
+                </li>
+
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">HTML & CSS / Tailwind CSS</h5>
+                    <data value="95">95%</data>
+                  </div>
+                  <div class="skill-progress-bg">
+                    <div class="skill-progress-fill" data-width="95%"></div>
+                  </div>
+                </li>
+
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">Data Structures & Algorithms</h5>
+                    <data value="80">80%</data>
+                  </div>
+                  <div class="skill-progress-bg">
+                    <div class="skill-progress-fill" data-width="80%"></div>
+                  </div>
+                </li>
+
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">Competitive Programming</h5>
+                    <data value="75">75%</data>
+                  </div>
+                  <div class="skill-progress-bg">
+                    <div class="skill-progress-fill" data-width="75%"></div>
+                  </div>
+                </li>
+
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">SQL & Firebase</h5>
+                    <data value="80">80%</data>
+                  </div>
+                  <div class="skill-progress-bg">
+                    <div class="skill-progress-fill" data-width="80%"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </section>
         </article>
