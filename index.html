@@ -19,7 +19,7 @@
       property="og:description"
       content="Portfolio of Siddhant Shukla - MERN Stack Developer and Competitive Programmer. View my projects and skills."
     />
-    <meta property="og:image" content="./assets/images/avatar.jpg" />
+    <meta property="og:image" content="./assets/images/onejfif.jfif" />
     <meta property="og:url" content="https://siddhantshukla.dev/" />
     <meta property="og:type" content="website" />
 
@@ -50,14 +50,8 @@
     />
 
     <script defer src="script.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -91,7 +85,6 @@
         <div class="sidebar-info">
           <figure class="avatar-box">
             <img
-              style="border-radius: 30px"
               src="./assets/images/onejfif.jfif"
               alt="Siddhant Shukla"
               width="80"
@@ -170,6 +163,8 @@
                 class="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="LinkedIn"
+                aria-label="LinkedIn profile"
               >
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
@@ -181,6 +176,8 @@
                 class="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="X (Twitter)"
+                aria-label="X profile"
               >
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
@@ -192,6 +189,8 @@
                 class="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="GitHub"
+                aria-label="GitHub profile"
               >
                 <ion-icon name="logo-github"></ion-icon>
               </a>
@@ -204,6 +203,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Codolio"
+                aria-label="Codolio profile"
               >
                 <ion-icon name="link-outline"></ion-icon>
               </a>
@@ -219,7 +219,6 @@
               <button
                 class="navbar-link active"
                 data-nav-link
-                data-page="about"
                 aria-label="About section"
               >
                 About
@@ -229,7 +228,6 @@
               <button
                 class="navbar-link"
                 data-nav-link
-                data-page="resume"
                 aria-label="Resume section"
               >
                 Resume
@@ -239,7 +237,6 @@
               <button
                 class="navbar-link"
                 data-nav-link
-                data-page="portfolio"
                 aria-label="Portfolio section"
               >
                 Portfolio
@@ -259,7 +256,6 @@
               <button
                 class="navbar-link"
                 data-nav-link
-                data-page="contact"
                 aria-label="Contact section"
               >
                 Contact
@@ -466,17 +462,8 @@
           </section>
 
           <section class="skill">
-            <div class="skills-header">
-              <h3 class="h3 skills-title">My skills</h3>
-
-              <label class="toggle-switch">
-                <input type="checkbox" id="skillsToggle" />
-                <span class="slider"></span>
-              </label>
-            </div>
-
-            <!-- CHIP VIEW -->
-            <div id="chipSkills" class="skill-tags content-card active">
+            <h3 class="h3 skills-title">My skills</h3>
+            <div class="skill-tags content-card">
               <span class="skill-tag">HTML</span>
               <span class="skill-tag">CSS</span>
               <span class="skill-tag">JavaScript</span>
@@ -496,49 +483,6 @@
               <span class="skill-tag">SQL</span>
               <span class="skill-tag">Firebase</span>
             </div>
-
-            <!-- PROGRESS VIEW -->
-            <ul id="barSkills" class="skills-list content-card">
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Web Development</h5>
-                  <data value="90">90%</data>
-                </div>
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">MERN Stack</h5>
-                  <data value="75">75%</data>
-                </div>
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 75%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Data Structures & Algorithms</h5>
-                  <data value="85">85%</data>
-                </div>
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Problem Solving</h5>
-                  <data value="85">85%</data>
-                </div>
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%"></div>
-                </div>
-              </li>
-            </ul>
           </section>
         </article>
 
@@ -608,299 +552,161 @@
             </div>
 
             <ul class="project-list">
-              <!-- 1 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="full stack development"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://satya-sanatan-charcha.netlify.app/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/Sanatan-Charcha"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/sanatan.png"
-                    alt="Satya Sanatan Charcha"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">Satya Sanatan Charcha</h3>
-                <p class="project-category">Full Stack Development</p>
-              </li>
 
-              <!-- 2 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="full stack development"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://roshani-makeup-studio.netlify.app/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/Roshani_Beauty_Salon"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/Makeup.png"
-                    alt="Roshani Makeup Studio"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">Roshani Makeup Studio</h3>
-                <p class="project-category">Full Stack Development</p>
-              </li>
-
-              <!-- 3 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://siddhantshukla108.github.io/DeVyneTourists/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/DeVyneTourists"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/tour.png"
-                    alt="DeVyne Tourist"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">DeVyne Tourist</h3>
-                <p class="project-category">Web Development</p>
-              </li>
-
-              <!-- 4 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://siddhantshukla108.github.io/Meals-On-Weals-Food-Store-/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/Meals-On-Weals-Food-Store-"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/food.png"
-                    alt="Meals On Weals"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">Meals On Weals</h3>
-                <p class="project-category">Web Development</p>
-              </li>
-
-              <!-- 5 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="generative ai"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://supriya-bot.netlify.app/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/Supriya-Bot"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/Supriya-Bot.png"
-                    alt="Supriya Bot"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">Supriya Bot</h3>
-                <p class="project-category">Generative AI</p>
-              </li>
-
-              <!-- 6 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="generative ai"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://gpt-coders.netlify.app/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <!-- <a href="#" target="_blank" class="project-btn">
+  <!-- 1 -->
+  <li class="project-item active" data-filter-item data-category="full stack development">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://satya-sanatan-charcha.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Satya Sanatan Charcha" aria-label="View Satya Sanatan Charcha project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="Satya Sanatan Charcha source code" aria-label="Satya Sanatan Charcha source code">
           <ion-icon name="logo-github"></ion-icon>
-        </a> -->
-                  </div>
-                  <img
-                    src="./assets/images/GPT-Coders.png"
-                    alt="GPT Coders"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">Gpt Coders</h3>
-                <p class="project-category">Generative AI</p>
-              </li>
+        </a>
+      </div>
+      <img src="./assets/images/sanatan.png" alt="Satya Sanatan Charcha" loading="lazy" />
+    </figure>
+    <h3 class="project-title">Satya Sanatan Charcha</h3>
+    <p class="project-category">Full Stack Development</p>
+  </li>
 
-              <!-- 7 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="application"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://siddhantshukla108.github.io/Analog-Clock/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/Analog-Clock"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/clock.png"
-                    alt="Analog Clock"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">Analog Clock</h3>
-                <p class="project-category">Application</p>
-              </li>
+  <!-- 2 -->
+  <li class="project-item active" data-filter-item data-category="full stack development">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://roshani-makeup-studio.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Roshani Makeup Studio" aria-label="View Roshani Makeup Studio project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="Roshani Makeup Studio source code" aria-label="Roshani Makeup Studio source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/Makeup.png" alt="Roshani Makeup Studio" loading="lazy" />
+    </figure>
+    <h3 class="project-title">Roshani Makeup Studio</h3>
+    <p class="project-category">Full Stack Development</p>
+  </li>
 
-              <!-- 8 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="application"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://devynecast.netlify.app/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/DeVyneCast"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/cast.png"
-                    alt="DeVyne Cast"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">DeVyne Cast</h3>
-                <p class="project-category">Application</p>
-              </li>
+  <!-- 3 -->
+  <li class="project-item active" data-filter-item data-category="web development">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://siddhantshukla108.github.io/DeVyneTourists/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View DeVyne Tourist" aria-label="View DeVyne Tourist project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="DeVyne Tourist source code" aria-label="DeVyne Tourist source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/tour.png" alt="DeVyne Tourist" loading="lazy" />
+    </figure>
+    <h3 class="project-title">DeVyne Tourist</h3>
+    <p class="project-category">Web Development</p>
+  </li>
 
-              <!-- 9 -->
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="application"
-              >
-                <figure class="project-img">
-                  <div class="project-links">
-                    <a
-                      href="https://siddhantshukla108.github.io/DeVyne-Quiz-App/"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </a>
-                    <a
-                      href="https://github.com/siddhantshukla108/DeVyne-Quiz-App"
-                      target="_blank"
-                      class="project-btn"
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                  </div>
-                  <img
-                    src="./assets/images/quiz.png"
-                    alt="DeVyne Quiz"
-                    loading="lazy"
-                  />
-                </figure>
-                <h3 class="project-title">DeVyne Quiz</h3>
-                <p class="project-category">Application</p>
-              </li>
-            </ul>
+  <!-- 4 -->
+  <li class="project-item active" data-filter-item data-category="web development">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://siddhantshukla108.github.io/Meals-On-Weals-Food-Store-/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Meals On Weals" aria-label="View Meals On Weals project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="Meals On Weals source code" aria-label="Meals On Weals source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/food.png" alt="Meals On Weals" loading="lazy" />
+    </figure>
+    <h3 class="project-title">Meals On Weals</h3>
+    <p class="project-category">Web Development</p>
+  </li>
+
+  <!-- 5 -->
+  <li class="project-item active" data-filter-item data-category="generative ai">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://supriya-bot.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Supriya Bot" aria-label="View Supriya Bot project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="Supriya Bot source code" aria-label="Supriya Bot source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/Supriya-Bot.png" alt="Supriya Bot" loading="lazy" />
+    </figure>
+    <h3 class="project-title">Supriya Bot</h3>
+    <p class="project-category">Generative AI</p>
+  </li>
+
+  <!-- 6 -->
+  <li class="project-item active" data-filter-item data-category="generative ai">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://gpt-coders.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View GPT Coders" aria-label="View GPT Coders project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="GPT Coders source code" aria-label="GPT Coders source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/GPT-Coders.png" alt="GPT Coders" loading="lazy" />
+    </figure>
+    <h3 class="project-title">Gpt Coders</h3>
+    <p class="project-category">Generative AI</p>
+  </li>
+
+  <!-- 7 -->
+  <li class="project-item active" data-filter-item data-category="application">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://siddhantshukla108.github.io/Analog-Clock/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Analog Clock" aria-label="View Analog Clock project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="Analog Clock source code" aria-label="Analog Clock source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/clock.png" alt="Analog Clock" loading="lazy" />
+    </figure>
+    <h3 class="project-title">Analog Clock</h3>
+    <p class="project-category">Application</p>
+  </li>
+
+  <!-- 8 -->
+  <li class="project-item active" data-filter-item data-category="application">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://devynecast.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View DeVyne Cast" aria-label="View DeVyne Cast project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="DeVyne Cast source code" aria-label="DeVyne Cast source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/cast.png" alt="DeVyne Cast" loading="lazy" />
+    </figure>
+    <h3 class="project-title">DeVyne Cast</h3>
+    <p class="project-category">Application</p>
+  </li>
+
+  <!-- 9 -->
+  <li class="project-item active" data-filter-item data-category="application">
+    <figure class="project-img">
+      <div class="project-links">
+        <a href="https://siddhantshukla108.github.io/DeVyne-Quiz-App/" target="_blank" rel="noopener noreferrer" class="project-btn" title="View DeVyne Quiz" aria-label="View DeVyne Quiz project">
+          <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn" title="DeVyne Quiz source code" aria-label="DeVyne Quiz source code">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </div>
+      <img src="./assets/images/quiz.png" alt="DeVyne Quiz" loading="lazy" />
+    </figure>
+    <h3 class="project-title">DeVyne Quiz</h3>
+    <p class="project-category">Application</p>
+  </li>
+
+</ul>
           </section>
         </article>
 
@@ -909,10 +715,8 @@
             <h2 class="h2 article-title">Coding Profiles</h2>
           </header>
 
-          <section
-            class="coding-profiles-grid"
-            id="coding-profiles-container"
-          ></section>
+          <section class="coding-profiles-grid" id="coding-profiles-container">
+          </section>
         </article>
 
         <article class="contact" data-page="contact">
@@ -924,12 +728,11 @@
             <figure>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14412.154162277904!2d81.8456639!3d25.436975!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acab5db1cb3c1%3A0x6d577966cecd47a9!2sC2%2FC254%2C%20South%20Malaka%2C%20Prayagraj%2C%20Uttar%20Pradesh%20211001!5e0!3m2!1sen!2sin!4v1768555187733!5m2!1sen!2sin"
+                title="Location map of Prayagraj, Uttar Pradesh"
                 width="100%"
                 height="450"
-                style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </figure>
           </section>
@@ -990,7 +793,7 @@
       aria-label="Scroll to top"
       title="Scroll to top"
     >
-      <ion-icon name="arrow-up-outline"></ion-icon>
+      <ion-icon name="chevron-up-outline"></ion-icon>
     </button>
   </body>
 </html>

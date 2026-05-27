@@ -246,12 +246,14 @@ const toggle = document.getElementById("skillsToggle");
 const chip = document.getElementById("chipSkills");
 const bar = document.getElementById("barSkills");
 
-toggle.addEventListener("change", () => {
-  if (toggle.checked) {
-    chip.style.display = "none";
-    bar.style.display = "block";
-  } else {
-    chip.style.display = "flex";
-    bar.style.display = "none";
-  }
-});
+if (toggle && chip && bar) {
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      chip.style.display = "none";
+      bar.style.display = "block";
+    } else {
+      chip.style.display = "flex";
+      bar.style.display = "none";
+    }
+  });
+}
