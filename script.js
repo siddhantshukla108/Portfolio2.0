@@ -29,6 +29,18 @@ for (let i = 0; i < selectItems.length; i++) {
     if (selectValue) selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
+
+    // Sync with desktop filter buttons
+    for (let j = 0; j < filterBtn.length; j++) {
+      if (filterBtn[j].innerText.toLowerCase().trim() === selectedValue.trim()) {
+        if (lastClickedBtn) {
+          lastClickedBtn.classList.remove("active");
+        }
+        filterBtn[j].classList.add("active");
+        lastClickedBtn = filterBtn[j];
+        break;
+      }
+    }
   });
 }
 
@@ -36,19 +48,12 @@ for (let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
-<<<<<<< HEAD
   const normalized = selectedValue.toLowerCase().trim();
   for (let i = 0; i < filterItems.length; i++) {
     const itemCategory = (filterItems[i].dataset.category || "").toLowerCase().trim();
     if (normalized === "all") {
       filterItems[i].classList.add("active");
     } else if (normalized === itemCategory) {
-=======
-  for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
@@ -96,12 +101,8 @@ if (form && formBtn) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     formBtn.setAttribute("disabled", "");
-<<<<<<< HEAD
     const btnSpan = formBtn.querySelector("span");
     if (btnSpan) btnSpan.innerText = "Sending...";
-=======
-    formBtn.querySelector("span").innerText = "Sending...";
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
     
     const formData = new FormData(form);
     
@@ -137,12 +138,13 @@ if (form && formBtn) {
       }
     })
     .finally(() => {
-      formBtn.removeAttribute("disabled");
-<<<<<<< HEAD
+      // Re-evaluate form validity rather than unconditionally enabling the button
+      if (form.checkValidity()) {
+        formBtn.removeAttribute("disabled");
+      } else {
+        formBtn.setAttribute("disabled", "");
+      }
       if (btnSpan) btnSpan.innerText = "Send Message";
-=======
-      formBtn.querySelector("span").innerText = "Send Message";
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
       setTimeout(() => { if (msgElement) msgElement.style.display = "none"; }, 5000);
     });
   });
@@ -208,11 +210,7 @@ const codingProfiles = [
   },
   {
     name: "CodeChef",
-<<<<<<< HEAD
-    url: "https://www.codechef.com/users/siddhantshu108",
-=======
     url: "https://www.codechef.com/users/sidshuk108",
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
     icon: "trophy-outline",
     desc: "Competitive programming contests"
   },
@@ -224,31 +222,19 @@ const codingProfiles = [
   },
   {
     name: "HackerRank",
-<<<<<<< HEAD
-    url: "https://www.hackerrank.com/profile/shuklasiddhant31",
-=======
     url: "https://www.hackerrank.com/profile/siddhantshukla108",
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
     icon: "terminal-outline",
     desc: "Skill certifications & challenges"
   },
   {
     name: "GeeksforGeeks",
-<<<<<<< HEAD
     url: "https://www.geeksforgeeks.org/user/siddhantshukla108",
-=======
-    url: "https://www.geeksforgeeks.org/user/siddhantshukla108/",
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
     icon: "school-outline",
     desc: "DSA tutorials & practice problems"
   },
   {
     name: "Coding Ninjas",
-<<<<<<< HEAD
-    url: "https://www.naukri.com/code360/profile/deVyne",
-=======
     url: "https://www.naukri.com/code360/profile/siddhantshukla108",
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
     icon: "rocket-outline",
     desc: "Guided learning paths & problems"
   }
@@ -269,24 +255,47 @@ if (profilesContainer) {
     `;
     profilesContainer.innerHTML += profileHTML;
   });
-<<<<<<< HEAD
 }
 
-// Skills section toggle functionality..
-
+// Skills section toggle functionality with dynamic bar animation
 const toggle = document.getElementById("skillsToggle");
 const chip = document.getElementById("chipSkills");
 const bar = document.getElementById("barSkills");
 
-toggle.addEventListener("change", () => {
-  if (toggle.checked) {
-    chip.style.display = "none";
-    bar.style.display = "block";
-  } else {
-    chip.style.display = "flex";
-    bar.style.display = "none";
+if (toggle && chip && bar) {
+  const progressFills = bar.querySelectorAll(".skill-progress-fill");
+  // Set initial width to 0% so they start un-filled on load
+  progressFills.forEach(fill => fill.style.width = "0%");
+
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      chip.style.display = "none";
+      bar.style.display = "block";
+
+      // Trigger smooth fill-up animation when switching to Bars view
+      progressFills.forEach(fill => {
+        const targetWidth = fill.getAttribute("data-width") || "0%";
+        fill.style.width = "0%";
+        // Force reflow
+        fill.offsetHeight;
+        fill.style.width = targetWidth;
+      });
+    } else {
+      chip.style.display = "flex";
+      bar.style.display = "none";
+      // Reset widths back to 0% so they can animate again next time
+      progressFills.forEach(fill => fill.style.width = "0%");
+    }
+  });
+}
+
+// Hide empty project GitHub source code buttons programmatically on page load
+document.querySelectorAll(".project-item").forEach(item => {
+  const githubLink = item.querySelector(".project-links a[title*='source code']");
+  if (githubLink) {
+    const href = githubLink.getAttribute("href");
+    if (!href || href === "#" || href.trim() === "") {
+      githubLink.classList.add("hidden");
+    }
   }
 });
-=======
-}
->>>>>>> 66fb5b7631232b8f4b363f09b26bbef0fae0542a
