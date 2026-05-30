@@ -1,4 +1,3 @@
-<img width="1364" height="639" alt="image" src="https://github.com/user-attachments/assets/16cfbd5b-e8ea-4d47-b084-e4b1b56c7784" /># 🚀 Portfolio 2.0
 
 A modern, responsive personal portfolio website showcasing my skills, projects, and experience as a Full-Stack MERN Developer.
 
