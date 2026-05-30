@@ -8,8 +8,7 @@ A modern, responsive personal portfolio website showcasing my skills, projects, 
 
 ## 📸 Preview
 
-> _Add a screenshot of your portfolio here_
-> `![Portfolio Preview](./preview.png)`
+![Portfolio Preview](./preview.png)
 
 ---
 
