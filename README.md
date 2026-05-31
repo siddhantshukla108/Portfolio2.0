@@ -8,8 +8,7 @@ A modern, responsive personal portfolio website showcasing my skills, projects, 
 
 ## 📸 Preview
 
-> _Add a screenshot of your portfolio here_
-> `![Portfolio Preview](./preview.png)`
+![Portfolio Preview](./preview.png)
 
 ---
 
@@ -101,7 +100,7 @@ npm run build
 
 - 🐙 GitHub: [@siddhantshukla108](https://github.com/siddhantshukla108)
 - 💼 LinkedIn: [linkedin.com/in/siddhantshukla108](https://linkedin.com/in/siddhantshukla108)
-- 📧 Email: _your-email@example.com_
+- 📧 Email: devyne0108@gmail.com
 
 ---
 
